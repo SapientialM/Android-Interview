@@ -1,0 +1,33 @@
+<script>
+// 自动生成右侧页内 TOC（类似 d2l.ai 的右侧目录）
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth < 1440) return; // 小屏幕不显示
+
+  var content = document.querySelector('.main-content');
+  if (!content) return;
+
+  var headings = content.querySelectorAll('h2, h3');
+  if (headings.length < 2) return; // 至少2个标题才显示 TOC
+
+  var toc = document.createElement('nav');
+  toc.className = 'toc-sidebar';
+
+  var title = document.createElement('div');
+  title.style.cssText = 'font-weight:600;color:#1a202c;margin-bottom:0.5rem;font-size:0.85rem;';
+  title.textContent = '目录';
+  toc.appendChild(title);
+
+  headings.forEach(function(h) {
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    a.className = h.tagName === 'H2' ? 'toc-h2' : 'toc-h3';
+    toc.appendChild(a);
+  });
+
+  var wrap = document.querySelector('.main-content-wrap');
+  if (wrap) {
+    wrap.appendChild(toc);
+  }
+});
+</script>

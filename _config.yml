@@ -2,27 +2,44 @@ title: Android-Interview
 description: Android 客户端面试准备仓库 — 从零基础入门到面试冲刺
 remote_theme: just-the-docs/just-the-docs
 
-# 搜索
+# === 搜索 ===
 search_enabled: true
 search:
   heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
 
-# 标题锚点
+# === 页内标题锚点 ===
 heading_anchors: true
 
-# 顶部辅助链接
+# === 顶部辅助链接 ===
 aux_links:
   "GitHub 仓库": "https://github.com/SapientialM/Android-Interview"
 
-# 回到顶部
+# === 回到顶部 ===
 back_to_top: true
 back_to_top_text: "回到顶部"
 
-# 页脚
+# === 页脚 ===
 footer_content: "整合自多个开源项目，经重新组织精炼。原始资料版权归原作者所有。"
 
-# 配色
+# === 导航折叠 ===
+nav_sort: case_insensitive
+nav_fold: true
+
+# === 面包屑导航 ===
+breadcrumbs: true
+
+# === 配色 ===
 color_scheme: light
+
+# === 代码复制按钮 ===
+enable_copy_code_button: true
+
+# === Mermaid 图表支持 ===
+mermaid:
+  version: "10.1.0"
 
 plugins:
   - jekyll-optional-front-matter
@@ -42,3 +59,5 @@ exclude:
   - LICENSE
   - .gitignore
   - README.md
+  - Gemfile
+  - _sass

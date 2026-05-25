@@ -1,0 +1,212 @@
+// 自定义配色 — 参考 d2l.ai 风格
+// 主色调：蓝色系，干净的白色背景
+
+:root {
+  --sidebar-width: 18rem;
+}
+
+// === 侧边栏 ===
+.nav-list .nav-list-item .nav-list-link {
+  font-size: 0.85rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.nav-list .nav-list-item .nav-list-link:hover {
+  background-image: linear-gradient(135deg, #e8f0fe 0%, #f0f4ff 100%);
+}
+
+.nav-list .nav-list-item .nav-list-link.active {
+  background-image: linear-gradient(135deg, #d4e4fc 0%, #e0ecff 100%);
+  border-left: 3px solid #2b6cb0;
+  font-weight: 600;
+}
+
+// === 主内容区 ===
+.main-content {
+  max-width: 52rem;
+  line-height: 1.7;
+  font-size: 0.95rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    color: #1a202c;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #2d3748;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    color: #4a5568;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #718096;
+  }
+
+  a {
+    color: #2b6cb0;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      color: #1a4972;
+    }
+  }
+
+  code {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 3px;
+    padding: 0.1em 0.4em;
+    font-size: 0.9em;
+    color: #2d3748;
+  }
+
+  // 代码块
+  pre {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+
+    code {
+      background: none;
+      border: none;
+      padding: 0;
+    }
+  }
+
+  // 表格
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+
+    th {
+      background: #f7fafc;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #e2e8f0;
+      text-align: left;
+    }
+
+    td {
+      padding: 0.4rem 0.75rem;
+      border: 1px solid #e2e8f0;
+    }
+  }
+
+  // 引用块
+  blockquote {
+    border-left: 4px solid #2b6cb0;
+    background: #f0f4ff;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    color: #4a5568;
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+// === 顶部导航栏 ===
+.site-header {
+  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #1a202c;
+}
+
+// === 搜索栏 ===
+.search-input-wrap {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+// === 右侧页内 TOC（大屏幕时显示）===
+@media (min-width: 90rem) {
+  .main-content-wrap {
+    position: relative;
+  }
+
+  .toc-sidebar {
+    position: fixed;
+    right: max(2rem, calc((100vw - 90rem) / 2 - 12rem));
+    top: 5rem;
+    width: 14rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    padding-left: 1rem;
+    border-left: 2px solid #e2e8f0;
+
+    a {
+      color: #718096;
+      text-decoration: none;
+      display: block;
+      padding: 0.15rem 0;
+
+      &:hover {
+        color: #2b6cb0;
+      }
+
+      &.toc-h2 {
+        font-weight: 500;
+        color: #4a5568;
+      }
+
+      &.toc-h3 {
+        padding-left: 1rem;
+      }
+    }
+  }
+}
+
+// === 自适应：小屏幕隐藏 TOC ===
+@media (max-width: 89.999rem) {
+  .toc-sidebar {
+    display: none;
+  }
+}
+
+// === Footer ===
+.site-footer {
+  border-top: 1px solid #e2e8f0;
+  color: #a0aec0;
+  font-size: 0.8rem;
+}
+
+// === 辅助链接 ===
+.aux-nav .aux-nav-list-item .aux-nav-list-btn {
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+// === 打印样式 ===
+@media print {
+  .side-bar, .site-header, .toc-sidebar {
+    display: none !important;
+  }
+  .main-content {
+    max-width: none;
+  }
+}
