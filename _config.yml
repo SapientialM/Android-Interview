@@ -1,0 +1,19 @@
+title: Android-Interview
+description: Android 客户端面试准备仓库 — 从零基础入门到面试冲刺
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-optional-front-matter
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# 排除不需要处理的文件
+exclude:
+  - tmp
+  - .claude
+  - .github
+  - LICENSE
+  - .gitignore
