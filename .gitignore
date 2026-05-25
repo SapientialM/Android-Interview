@@ -1,0 +1,6 @@
+.DS_Store
+tmp/
+.claude/
+.idea/
+*.iml
+build/
